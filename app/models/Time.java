@@ -8,22 +8,22 @@ import play.data.validation.Constraints.*;
 import javax.persistence.*;
 
 @Entity
-public class Ambiente extends Model {
+public class Time extends Model {
 
 	@Id
 	public Long id;
 	
-	@ManyToOne 
-	public Time time;
+	@OneToMany
+	public Ambiente ambientes;
 
 	@OneToMany
 	public Log logs;
 
-	public String label;
+	public String nome;
 
-	public static Finder<Long, Ambiente> find = new Finder(Long.class, Ambiente.class);
+	public static Finder<Long, Time> find = new Finder(Long.class, Time.class);
 
-	public static List<Ambiente> all() {
+	public static List<Time> all() {
 		return find.all();
 	}
 }
