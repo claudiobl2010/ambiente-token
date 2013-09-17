@@ -1,0 +1,19 @@
+@(ambiente: Ambiente, times: List[Time], logs: List[Log])
+
+@ambiente.label
+
+<br><br>
+
+@for(time <- times) {
+	<div>
+		@time.nome
+	</div>
+}
+
+<br><br>
+
+@for(log <- logs) {
+	<div>
+		@log.time.nome | @log.acao | @log.logDate
+	</div>
+}

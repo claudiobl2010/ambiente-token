@@ -26,4 +26,9 @@ public class Ambiente extends Model {
 	public static List<Ambiente> all() {
 		return find.all();
 	}
+	
+	public static Ambiente one(String label) {
+		return find.where().eq("label", label).findUnique();
+	}
+	
 }
