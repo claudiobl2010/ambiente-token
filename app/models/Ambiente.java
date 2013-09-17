@@ -13,7 +13,7 @@ public class Ambiente extends Model {
 	@Id
 	public Long id;
 	
-	@ManyToOne 
+	@ManyToOne
 	public Time time;
 
 	@OneToMany
@@ -28,7 +28,9 @@ public class Ambiente extends Model {
 	}
 	
 	public static Ambiente one(String label) {
-		return find.where().eq("label", label).findUnique();
+		return find.where()
+					.eq("label", label.trim().toUpperCase())
+					.findUnique();
 	}
 	
 }

@@ -24,6 +24,15 @@ public class Time extends Model {
 	public static Finder<Long, Time> find = new Finder(Long.class, Time.class);
 
 	public static List<Time> all() {
-		return find.all();
+		return find.where()
+					.orderBy("nome asc")
+					.findList();
 	}
+	
+	public static Time one(Long id) {
+		return find.where()
+				.eq("id", id)
+				.findUnique();
+	}
+	
 }

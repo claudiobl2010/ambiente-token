@@ -14,20 +14,23 @@ public class Log extends Model {
 	@Id
 	public Long id;
 	
-	@ManyToOne 
+	@ManyToOne
 	public Time time;
 
-	@ManyToOne 
+	@ManyToOne
 	public Ambiente ambiente;
 
-	@Formats.DateTime(pattern="dd/MM/yyyy hh:mm:ss")
 	public Date logDate = new Date();	
 
 	public String acao;
 
 	public static Finder<Long, Log> find = new Finder(Long.class, Log.class);
 
-	public static List<Log> all() {
-		return find.all();
+	public static List<Log> all(Long idAmbiente) {
+		return find.where()
+					.eq("ambiente_id", idAmbiente)
+					.orderBy("log_date desc")
+					.setMaxRows(20) 
+					.findList();
 	}
 }
