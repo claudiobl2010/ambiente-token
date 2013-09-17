@@ -1,6 +1,6 @@
 // @SOURCE:/Users/claudio.leite/Projetos/ambiente-token/conf/routes
-// @HASH:7146bf5ffec26c2f847f18152bb46ae68389afe6
-// @DATE:Fri Sep 13 17:42:42 BRT 2013
+// @HASH:4cc893b60989c88084f1232ea1d73d762da16919
+// @DATE:Mon Sep 16 19:58:35 BRT 2013
 
 package controllers;
 

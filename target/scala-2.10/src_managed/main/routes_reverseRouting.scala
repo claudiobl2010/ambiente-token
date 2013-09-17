@@ -1,6 +1,6 @@
 // @SOURCE:/Users/claudio.leite/Projetos/ambiente-token/conf/routes
-// @HASH:7146bf5ffec26c2f847f18152bb46ae68389afe6
-// @DATE:Fri Sep 13 17:42:42 BRT 2013
+// @HASH:4cc893b60989c88084f1232ea1d73d762da16919
+// @DATE:Mon Sep 16 19:58:35 BRT 2013
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,10 +13,12 @@ import play.libs.F
 import Router.queryString
 
 
+// @LINE:12
 // @LINE:9
 // @LINE:6
 package controllers {
 
+// @LINE:9
 // @LINE:6
 class ReverseApplication {
     
@@ -26,15 +28,21 @@ def index(): Call = {
    Call("GET", _prefix)
 }
                                                 
+
+// @LINE:9
+def ambientes(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "ambientes")
+}
+                                                
     
 }
                           
 
-// @LINE:9
+// @LINE:12
 class ReverseAssets {
     
 
-// @LINE:9
+// @LINE:12
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -46,10 +54,12 @@ def at(file:String): Call = {
                   
 
 
+// @LINE:12
 // @LINE:9
 // @LINE:6
 package controllers.javascript {
 
+// @LINE:9
 // @LINE:6
 class ReverseApplication {
     
@@ -64,15 +74,26 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
    """
 )
                         
+
+// @LINE:9
+def ambientes : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.ambientes",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "ambientes"})
+      }
+   """
+)
+                        
     
 }
               
 
-// @LINE:9
+// @LINE:12
 class ReverseAssets {
     
 
-// @LINE:9
+// @LINE:12
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -89,10 +110,12 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:12
 // @LINE:9
 // @LINE:6
 package controllers.ref {
 
+// @LINE:9
 // @LINE:6
 class ReverseApplication {
     
@@ -102,15 +125,21 @@ def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
 )
                       
+
+// @LINE:9
+def ambientes(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.ambientes(), HandlerDef(this, "controllers.Application", "ambientes", Seq(), "GET", """ Ambientes""", _prefix + """ambientes""")
+)
+                      
     
 }
                           
 
-// @LINE:9
+// @LINE:12
 class ReverseAssets {
     
 
-// @LINE:9
+// @LINE:12
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )

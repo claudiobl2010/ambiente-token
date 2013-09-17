@@ -1,6 +1,6 @@
 // @SOURCE:/Users/claudio.leite/Projetos/ambiente-token/conf/routes
-// @HASH:7146bf5ffec26c2f847f18152bb46ae68389afe6
-// @DATE:Fri Sep 13 17:42:42 BRT 2013
+// @HASH:4cc893b60989c88084f1232ea1d73d762da16919
+// @DATE:Mon Sep 16 19:58:35 BRT 2013
 
 
 import play.core._
@@ -33,9 +33,13 @@ private[this] lazy val controllers_Application_index0 = Route("GET", PathPattern
         
 
 // @LINE:9
-private[this] lazy val controllers_Assets_at1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+private[this] lazy val controllers_Application_ambientes1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("ambientes"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:12
+private[this] lazy val controllers_Assets_at2 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ambientes""","""controllers.Application.ambientes()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -52,7 +56,15 @@ case controllers_Application_index0(params) => {
         
 
 // @LINE:9
-case controllers_Assets_at1(params) => {
+case controllers_Application_ambientes1(params) => {
+   call { 
+        invokeHandler(controllers.Application.ambientes(), HandlerDef(this, "controllers.Application", "ambientes", Nil,"GET", """ Ambientes""", Routes.prefix + """ambientes"""))
+   }
+}
+        
+
+// @LINE:12
+case controllers_Assets_at2(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

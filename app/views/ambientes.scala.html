@@ -1,0 +1,13 @@
+@(ambientes: List[Ambiente])
+
+@main("Todo list") {
+    
+    <ul>
+        @for(ambiente <- ambientes) {
+            <li>
+                @ambiente.label
+            </li>
+        }
+    </ul>
+
+}
