@@ -26,16 +26,31 @@
 			</div>
 		</div>
 		
-
-
-
-		
-			@for(ambiente <- ambientes) {
-				<div>
-					@ambiente.label
+		<div class="page">
+			<div class="page-container">
+				<div class="ambiente">
+					@for(ambiente <- ambientes) {
+						<a href="/ambientes/@ambiente.label">
+							<div class="ambiente-botao">
+								@ambiente.label
+							</div>
+						</a>
+					}
 				</div>
-			}
-		
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="footer-container">
+				<div class="nome">
+					<span>ambiente-token</span>
+				</div>
+				<div class="versao">
+					<span>Versão: 0.1 (OUT/2013)</span>
+				</div>
+			</div>
+		</div>	
+
 
 	</body>
 

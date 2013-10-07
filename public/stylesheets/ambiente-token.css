@@ -48,3 +48,72 @@ img {
 	margin-right: 10px;
 	margin-top: 23px;
 }
+
+.footer {
+	background-color: #454545;
+    height: 120px;
+}
+
+.footer .footer-container {
+	margin: 0 auto;
+	width: 960px;
+	display: table;
+}
+
+.footer .footer-container .nome {
+	width: 480px;
+	text-align: right;
+	font-size: 22px;
+	font-weight: bold;
+	float: left;
+}
+
+    border-right: 1px solid #666666;
+    float: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 45px;
+    padding-right: 15px;
+    text-align: right;
+    width: 300px;	
+
+
+.footer .footer-container .versao {
+	width: 480px;
+	font-size: 12px;
+	float: left;
+}
+
+.page {
+	background: #FFFFFF;
+	min-height: 600px;
+}
+
+.page .page-container {
+	margin: 0 auto;
+	width: 960px;
+	display: table;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.page .page-container .ambiente {
+	margin: 0 auto;
+	width: 400px;
+}
+
+.page .page-container .ambiente .ambiente-botao {
+    background: #428A3A;
+    text-align: center;
+    width: 400px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    font-size: 22px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+.page .page-container .ambiente .ambiente-botao:hover {
+    background: #429A3A;
+}
