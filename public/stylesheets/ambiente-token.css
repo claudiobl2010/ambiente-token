@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:focus {
+	outline-style: none;
+	outline-width: 0;
+}
+
+img {
+	border: 0;
+}
+
+.header {
+    height: 75px;
+    border-bottom: 1px solid #428A3A;
+    border-top: 5px solid #428A3A;    
+}
+
+.header .header-container {
+	margin: 0 auto;
+	width: 960px;
+	display: table;
+}
+
+.header .header-container .logo-ambiente-token {
+	display: block;
+	float: left;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+
+.header .header-container .logo-java-play {
+	display: block;
+	float: right;
+	width: 85px;
+	height: 29px;
+	margin-right: 10px;
+	margin-top: 23px;
+}
