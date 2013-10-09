@@ -1,4 +1,4 @@
-@(ambientes: List[Ambiente])
+@(ambientes: List[Ambiente], VERSAO: String)
 
 <!DOCTYPE html>
 
@@ -22,7 +22,7 @@
 		<div class="header">
 			<div class="header-container">
 				<a href="/ambientes"><img class="logo-ambiente-token" src="@routes.Assets.at("images/ambiente-token.png")"></a>
-				<a href="http://www.playframework.com/"><img class="logo-java-play" src="@routes.Assets.at("images/java-play.png")"></a>
+				<a href="http://www.playframework.com/" target="_playframework"><img class="logo-java-play" src="@routes.Assets.at("images/java-play.png")"></a>
 			</div>
 		</div>
 		
@@ -42,11 +42,14 @@
 
 		<div class="footer">
 			<div class="footer-container">
-				<div class="nome">
-					<span>ambiente-token</span>
+				<div class="esquerdo">
+					<div class="nome">ambiente-token</div>
+					<div class="descricao">marca qual time está usando um determinado ambiente</div>
+
 				</div>
-				<div class="versao">
-					<span>Versão: 0.1 (OUT/2013)</span>
+				<div class="direito">
+					<div class="versao">versão</div>
+					<div class="num-versao">@VERSAO</div>
 				</div>
 			</div>
 		</div>	

@@ -11,13 +11,15 @@ import views.html.*;
 import models.*;
 
 public class Application extends Controller {
+	
+	public static final String VERSAO = "0.1 (OUT/2013)";
   
     public static Result index() {
     	return redirect(routes.Application.ambientes());
     }
     
     public static Result ambientes() {
-        return ok(views.html.ambientes.render(Ambiente.all()));        
+        return ok(views.html.ambientes.render(Ambiente.all(), VERSAO));        
     }    
 
     public static Result detalhe(String label) {
@@ -37,7 +39,8 @@ public class Application extends Controller {
         		views.html.detalhe.render(
         			ambiente,
         			times,
-        			logs
+        			logs,
+        			VERSAO
         		)
         	);
     }

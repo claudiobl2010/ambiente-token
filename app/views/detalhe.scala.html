@@ -1,4 +1,33 @@
-@(ambiente: Ambiente, times: List[Time], logs: List[Log])
+@(ambiente: Ambiente, times: List[Time], logs: List[Log], VERSAO: String)
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>ambiente-token</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="pt-br" />
+
+		<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+
+		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/ambiente-token.css")">
+
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/ambiente-token.js")" type="text/javascript"></script>
+	</head>
+
+	<body>
+	
+		<div class="header">
+			<div class="header-container">
+				<a href="/ambientes"><img class="logo-ambiente-token" src="@routes.Assets.at("images/ambiente-token.png")"></a>
+				<a href="http://www.playframework.com/" target="_playframework"><img class="logo-java-play" src="@routes.Assets.at("images/java-play.png")"></a>
+			</div>
+		</div>
+		
+		<div class="page">
+			<div class="page-container">
 
 @ambiente.label
 
@@ -17,3 +46,27 @@
 		@log.time.nome | @log.acao | @log.logDate
 	</div>
 }
+
+
+
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="footer-container">
+				<div class="esquerdo">
+					<div class="nome">ambiente-token</div>
+					<div class="descricao">marca qual time está usando um determinado ambiente</div>
+
+				</div>
+				<div class="direito">
+					<div class="versao">versão</div>
+					<div class="num-versao">@VERSAO</div>
+				</div>
+			</div>
+		</div>	
+
+
+	</body>
+
+</html>
