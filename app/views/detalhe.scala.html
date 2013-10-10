@@ -8,6 +8,7 @@
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="Content-Language" content="pt-br" />
+		<meta http-equiv="refresh" content="300">		
 
 		<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
 
@@ -27,27 +28,38 @@
 		</div>
 		
 		<div class="page">
+		
+			<div class="status-ambiente">
+				@ambiente.label : @if(ambiente.time == null) { livre } else { @ambiente.time.nome }
+			</div>
+
 			<div class="page-container">
+			
+				<div class="times">
+					@for(time <- times) {
+						<a href="#" class="link-times-botao" data-ambiente="@ambiente.label" data-time-id="@time.id">
+							<div class="times-botao">
+								@time.nome
+							</div>
+						</a>
+					}
+				</div>
 
-@ambiente.label
-
-<br><br>
-
-@for(time <- times) {
-	<div>
-		@time.nome
-	</div>
-}
-
-<br><br>
-
-@for(log <- logs) {
-	<div>
-		@log.time.nome | @log.acao | @log.logDate
-	</div>
-}
-
-
+				<table>
+					<tr>
+						<th>time</th>
+						<th>status</th>
+						<th>data</th>
+					</tr>
+					
+					@for(log <- logs) {
+						<tr>
+							<td>@log.time.nome</td>
+							<td>@log.acao</td>
+							<td>@log.logDate</td>
+						</tr>
+					}
+				</table>
 
 			</div>
 		</div>

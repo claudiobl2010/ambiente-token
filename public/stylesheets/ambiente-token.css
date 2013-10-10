@@ -132,3 +132,58 @@ img {
 .page .page-container .ambiente .ambiente-botao:hover {
     background: #429A3A;
 }
+
+.page .status-ambiente {
+    background: #428A3A;
+    color: #FFFFFF;
+    font-size: 64px;
+    font-weight: bold;
+    height: 170px;
+    padding-top: 90px;
+    text-align: center;
+	text-transform: lowercase;
+}
+
+.page .page-container .times {
+    display: table;
+    margin: 30px auto;
+    width: 800px;	}
+
+.page .page-container .times .times-botao {
+    background: #428A3A;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    float: left;
+    font-size: 18px;
+    margin: 10px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    text-align: center;
+    width: 180px;
+}
+
+.page .page-container .times .times-botao:hover {
+    background: #429A3A;
+}
+
+.page .page-container table {
+	width: 650px;
+	margin: 0 auto;
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.page .page-container table th {
+	background: #343434;
+	color: #EEEEEE;
+	padding: 10px;
+    text-align: center;
+}
+
+.page .page-container table td {
+	background: #EEEEEE;
+	color: #343434;
+	padding: 8px;
+    text-align: center;
+    font-size: 12px;
+}
